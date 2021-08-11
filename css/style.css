@@ -1,0 +1,15 @@
+:root {
+    --bs-font-sans-serif: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+    font-size: 2.3rem;
+}
+
+.sb-1 {
+    font-size: 1.3rem;
+}
+
+.sb-2 {
+    color:#1DA1F2;
+}
