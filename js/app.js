@@ -3,11 +3,18 @@ const statElem = document.querySelector('#stat');
 const twitterMessage = document.querySelector('#twitter');
 const linkedinMessage = document.querySelector('#linkedin');
 
+// inputText.addEventListener('keypress', (event) => {
+//     if(event.charCode === 13){
+//         event.preventDefault();
+//     }
+// });
+
 inputText.addEventListener('input', () => {
+
     const text = inputText.value;
 
     // count the words
-    const nbWords = text.split([' ']).filter(word => word.length > 0).length;
+    const nbWords = text.replaceAll('\n', ' ').split(' ').filter(word => word.length > 0).length;
 
     //count the characters
     const nbNoSpace = text.replaceAll(' ', '').length;
@@ -15,7 +22,7 @@ inputText.addEventListener('input', () => {
 
     //count twitter characters
     if(nbNoSpace >= 280) {
-        twitterMessage.innerHTML = `Oops! That's too many characters for Twitter.`;
+        twitterMessage.innerHTML = `Oops! Too many characters for Twitter.`;
     }
     else if (nbNoSpace === 0) {
         twitterMessage.innerHTML = `Start typing...`
@@ -26,7 +33,7 @@ inputText.addEventListener('input', () => {
 
     //count linkedin characters
     if(nbNoSpace >= 1300) {
-        linkedinMessage.innerHTML = `Oops! That's too many characters for LinkedIn.`;
+        linkedinMessage.innerHTML = `Oops! Too many characters for LinkedIn.`;
     }
     else if (nbNoSpace === 0) {
         linkedinMessage.innerHTML = `Start typing...`
