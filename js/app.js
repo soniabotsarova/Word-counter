@@ -23,23 +23,29 @@ inputText.addEventListener('input', () => {
     //count twitter characters
     if(nbNoSpace >= 280) {
         twitterMessage.innerHTML = `Oops! Too many characters for Twitter.`;
+        twitterMessage.style.color = "red";
     }
     else if (nbNoSpace === 0) {
-        twitterMessage.innerHTML = `Start typing...`
+        twitterMessage.innerHTML = `Start typing...`;
+        twitterMessage.style.color = "black";
     }
     else {
-        twitterMessage.innerHTML = `You're within the chatacter limit.`;
+        twitterMessage.innerHTML = `You're within the chatacter limit.`
+        twitterMessage.style.color = "black";
     }
 
     //count linkedin characters
     if(nbNoSpace >= 1300) {
         linkedinMessage.innerHTML = `Oops! Too many characters for LinkedIn.`;
+        linkedinMessage.style.color = "red";
     }
     else if (nbNoSpace === 0) {
-        linkedinMessage.innerHTML = `Start typing...`
+        linkedinMessage.innerHTML = `Start typing...`;
+        linkedinMessage.style.color = "black";
     }
     else {
         linkedinMessage.innerHTML = `You're within the character limit.`;
+        linkedinMessage.style.color = "black";
     }
 });
 
